@@ -1,5 +1,5 @@
 {
-  "name": "react-project-boilerplate",
+  "name": "studiosol-numbers",
   "version": "1.0.0",
   "description": "A React.js boilerplate",
   "main": "index.js",
@@ -10,15 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marceloseiji/react-project-boilerplate.git"
+    "url": "git+https://github.com/marceloseiji/studiosol-numbers"
   },
   "keywords": [],
   "author": "Marcelo Seiji Ikuta",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marceloseiji/react-project-boilerplate/issues"
-  },
-  "homepage": "https://github.com/marceloseiji/react-project-boilerplate#readme",
   "dependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
