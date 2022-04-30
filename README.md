@@ -1,9 +1,9 @@
-# react-project-boilerplate
-This is a [React.js](https://reactjs.org/docs/getting-started.html) boilerplate handmade created from scratch.
-### It has the purpose to be forked and used to develop other projects
+# studiosol-numbers
+This is a test made to studio-sol
+[Project rules](https://drive.google.com/file/d/1HRqt2HfKKZbBFGkkYwD8m3T4tbHrv8ZJ/view)
 
 ### Important notes
-    - yarn, this boilerplate was made to use yarn as prefered package manager
+    - yarn, this project was made to use yarn as prefered package manager
 ### Commands to use until now
 
 - yarn start
