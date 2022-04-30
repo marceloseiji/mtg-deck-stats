@@ -11,3 +11,7 @@ This is a test made to studio-sol
 
 - yarn build
   - this will build out dist folder on public/dist - this path can be changed in webpack.config.js - output
+
+### This project is tested with
+  - [jest](https://jestjs.io/pt-BR/)
+  - [testing-library](https://testing-library.com/docs/react-testing-library/intro/)

@@ -4,7 +4,7 @@
   "description": "A React.js boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "start": "npx webpack-dev-server --mode development --open --hot",
     "build": "npx webpack --mode production"
   },
@@ -28,6 +28,11 @@
     "webpack-dev-server": "^4.7.4"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.0.4",
+    "jest": "^28.0.3",
+    "jest-environment-jsdom": "^28.0.2",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
   }
