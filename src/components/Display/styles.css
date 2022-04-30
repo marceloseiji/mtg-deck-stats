@@ -1,0 +1,15 @@
+@import '../../styles/Theme.css';
+
+.display {
+  margin: 2rem auto auto auto;
+  width: 1000px;
+  height: 588px;
+  background-color: #eeeeee;
+}
+.display__title {
+  margin: 0;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 3.6rem;
+  color: var(--primary);
+}

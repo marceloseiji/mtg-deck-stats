@@ -1,0 +1,12 @@
+/* stylings for App component */
+html {
+  height: 100%;
+  font-size: 10px;
+  font-family: 'Montserrat';
+}
+body {
+  height: 100%;
+  background-color: #c1beb8;
+  width: 100%;
+  display: inline-block;
+}
