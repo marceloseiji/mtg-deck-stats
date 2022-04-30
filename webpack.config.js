@@ -22,7 +22,10 @@ module.exports = {
 
   // Options for resolving module requests
   // extensions that are used
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+  resolve: {
+    modules: [path.resolve('./src'), path.resolve('./node_modules')],
+    extensions: ['*', '.js', '.jsx']
+  },
 
   // Output point is where webpack should
   // output the bundles and assets
