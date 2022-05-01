@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles.css'
 import DisplayNumbers from 'components/DisplayNumber'
+import DisplayControls from 'components/DisplayControls'
 
 const Display = () => {
   return (
@@ -10,6 +11,7 @@ const Display = () => {
         <hr className="display__title__line" />
       </div>
       <DisplayNumbers />
+      <DisplayControls />
     </>
   )
 }
