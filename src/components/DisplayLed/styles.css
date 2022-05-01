@@ -2,6 +2,11 @@
 
 .displayLed {
   position: relative;
+  width: 73px;
+  height: 132px;
+}
+.displayLed:not(:first-child) {
+  margin-left: 1rem;
 }
 .displayLed__1 {
   position: absolute;
