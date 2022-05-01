@@ -5,6 +5,9 @@ import splitNumbers from 'utils/splitNumbers'
 const NumbersContext = createContext('Initial value')
 
 const NumbersProvider = ({ children }) => {
+  // First render
+  const [firstRender, setFirstRender] = useState(true)
+
   // Fetch initial number state
   const [fetchedNumber, setFetchedNumber] = useState(null)
   const [arrayNumbers, setArrayNumbers] = useState([])
@@ -12,6 +15,9 @@ const NumbersProvider = ({ children }) => {
 
   // Entered number state
   const [userEnteredNumber, setUserEnteredNumber] = useState([1000])
+  const [userEnteredNumberToCompare, setUserEnteredNumberToCompare] = useState([
+    1000
+  ])
 
   // Get the initial number from services
   useEffect(async () => {
@@ -34,8 +40,28 @@ const NumbersProvider = ({ children }) => {
     }
   }, [fetchedNumber])
 
+  // Verify userEnteredNumber x fetchedNumber
+  useEffect(() => {
+    console.log('verificando')
+    console.log(userEnteredNumberToCompare, fetchedNumber)
+    switch (true) {
+      case userEnteredNumberToCompare === fetchedNumber:
+        console.log('acertou')
+        break
+      case userEnteredNumberToCompare > fetchedNumber:
+        console.log('seu número é maior')
+        break
+      case userEnteredNumberToCompare < fetchedNumber:
+        console.log('seu número é menor')
+        break
+      default:
+        break
+    }
+  }, [userEnteredNumber])
+
   // Callback to get user entered number
   const handleUserNumber = (userNumber) => {
+    setUserEnteredNumberToCompare(Number(userNumber))
     setUserEnteredNumber(splitNumbers(userNumber))
   }
 
