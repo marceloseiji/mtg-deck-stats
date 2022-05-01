@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import DisplayNumbers from 'components/DisplayNumber'
+import DisplayNumbers from 'components/DisplayNumbers'
 import DisplayControls from 'components/DisplayControls'
 
 const Display = () => {

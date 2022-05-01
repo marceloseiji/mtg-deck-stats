@@ -3,15 +3,20 @@ import './styles.css'
 import { NumbersContext } from 'contexts/NumbersContext'
 
 const DisplayControls = () => {
-  const number = useContext(NumbersContext)
-  const [numberEntered, setNumberEntedered] = useState()
+  const { handleUserNumber } = useContext(NumbersContext)
+  const [numberEntered, setNumberEntedered] = useState('')
 
   const handleEnteredNumber = (event) => {
-    setNumberEntedered(event.target.value)
+    if (event.target.value < 1000 && event.target.value > -1) {
+      setNumberEntedered(event.target.value)
+    }
   }
 
   const handleSetContextNumber = () => {
-    setNumberEntedered('')
+    if (numberEntered) {
+      handleUserNumber(numberEntered)
+      setNumberEntedered('')
+    }
   }
 
   return (
@@ -25,7 +30,9 @@ const DisplayControls = () => {
           value={numberEntered}
           onChange={(event) => handleEnteredNumber(event)}
         />
-        <button onClick={handleSetContextNumber}>ENVIAR</button>
+        <button disabled={!numberEntered} onClick={handleSetContextNumber}>
+          ENVIAR
+        </button>
       </div>
     </>
   )
