@@ -1,0 +1,46 @@
+@import '../../styles/Theme.css';
+
+.displayLed {
+  position: relative;
+}
+.displayLed__1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.displayLed__2 {
+  position: absolute;
+  top: 2px;
+  left: 55px;
+}
+.displayLed__3 {
+  position: absolute;
+  top: 67px;
+  left: 55px;
+}
+.displayLed__4 {
+  position: absolute;
+  top: 119px;
+  left: 0px;
+}
+.displayLed__5 {
+  position: absolute;
+  top: 67px;
+  left: -2px;
+}
+.displayLed__6 {
+  position: absolute;
+  top: 2px;
+  left: -2px;
+}
+.displayLed__7 {
+  position: absolute;
+  top: 59px;
+  left: 3px;
+}
+.displayLed__on {
+  fill: var(--mediumBlack);
+}
+.displayLed__off {
+  fill: var(--lightGrey);
+}

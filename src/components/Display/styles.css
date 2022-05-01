@@ -4,7 +4,7 @@
   margin: 2rem auto auto auto;
   width: 1000px;
   height: 588px;
-  background-color: #eeeeee;
+  background-color: var(--lightWhite);
 }
 .display__title {
   display: inline-block;
