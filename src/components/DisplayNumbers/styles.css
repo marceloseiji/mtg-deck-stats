@@ -12,12 +12,20 @@
   width: 100%;
   justify-content: center;
 }
-.error {
+.displayNumbers__message {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--error);
   text-align: center;
   position: absolute;
-  top: -55px;
+  top: -22px;
   width: 100%;
+}
+.message_error {
+  color: var(--error);
+}
+.message_warning {
+  color: var(--warning);
+}
+.message_success {
+  color: var(--success);
 }

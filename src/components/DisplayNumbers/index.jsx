@@ -4,14 +4,24 @@ import DisplayLed from 'components/DisplayLed'
 import { NumbersContext } from 'contexts/NumbersContext'
 
 const DisplayNumbers = () => {
-  const { error, userEnteredNumber } = useContext(NumbersContext)
+  const { message, userEnteredNumber, errorNumber } = useContext(NumbersContext)
+  const [numberMap, setNumberMap] = useState([])
+
+  useEffect(() => {
+    setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
+  }, [userEnteredNumber, errorNumber])
+
   return (
     <>
       <div className="displayNumbers">
-        {error && <h2 className="error">ERRO</h2>}
+        {message && (
+          <h2 className={`displayNumbers__message ${message.color}`}>
+            {message.text}
+          </h2>
+        )}
         <div className="displayNumbers__center">
-          {userEnteredNumber.map((number, index) => (
-            <DisplayLed key={index} showNumber={number} error={error} />
+          {numberMap.map((number, index) => (
+            <DisplayLed key={index} showNumber={number} />
           ))}
         </div>
       </div>

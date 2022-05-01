@@ -7,4 +7,6 @@ body {
   --mediumGreyB: #9a9ea7;
   --mediumBlack: #262a34;
   --error: #cc3300;
+  --success: #32bf00;
+  --warning: #ff6600;
 }

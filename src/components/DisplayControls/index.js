@@ -4,7 +4,7 @@ import { NumbersContext } from 'contexts/NumbersContext'
 import ReplayIcon from 'assets/icons/ReplayIcon'
 
 const DisplayControls = () => {
-  const { handleUserNumber } = useContext(NumbersContext)
+  const { handleUserNumber, message } = useContext(NumbersContext)
   const [numberEntered, setNumberEntedered] = useState('')
 
   const handleEnteredNumber = (event) => {
@@ -23,10 +23,12 @@ const DisplayControls = () => {
   return (
     <div className="displayControls">
       <div className="displayControls__wrapper_button">
-        <button className="displayControls__button">
-          <ReplayIcon />
-          <span className="displayControls__button__text">NOVA PARTIDA</span>
-        </button>
+        {message.text === 'Erro' && (
+          <button className="displayControls__button">
+            <ReplayIcon />
+            <span className="displayControls__button__text">NOVA PARTIDA</span>
+          </button>
+        )}
       </div>
       <div className="displayControls__wrapper__entryNumber">
         <input

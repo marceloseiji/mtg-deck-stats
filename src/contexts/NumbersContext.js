@@ -7,17 +7,17 @@ const NumbersContext = createContext('Initial value')
 const NumbersProvider = ({ children }) => {
   // First render
   const [firstRender, setFirstRender] = useState(true)
-
   // Fetch initial number state
   const [fetchedNumber, setFetchedNumber] = useState(null)
   const [arrayNumbers, setArrayNumbers] = useState([])
-  const [error, setError] = useState(false)
-
-  // Entered number state
+  // Entered number states
   const [userEnteredNumber, setUserEnteredNumber] = useState([1000])
   const [userEnteredNumberToCompare, setUserEnteredNumberToCompare] = useState([
     1000
   ])
+  const [errorNumber, setErrorNumber] = useState()
+  // Message text and color states
+  const [message, setMessage] = useState({ text: '', color: '' })
 
   // Get the initial number from services
   useEffect(async () => {
@@ -28,8 +28,9 @@ const NumbersProvider = ({ children }) => {
     } else {
       const { StatusCode } = numberRequest
       // Set status error number like it was entered by user
-      setUserEnteredNumber(splitNumbers(StatusCode))
-      setError(true)
+      setErrorNumber(splitNumbers(StatusCode))
+      setMessage({ text: 'Erro', color: 'message_error' })
+      return
     }
   }, [])
 
@@ -42,20 +43,24 @@ const NumbersProvider = ({ children }) => {
 
   // Verify userEnteredNumber x fetchedNumber
   useEffect(() => {
-    console.log('verificando')
-    console.log(userEnteredNumberToCompare, fetchedNumber)
-    switch (true) {
-      case userEnteredNumberToCompare === fetchedNumber:
-        console.log('acertou')
-        break
-      case userEnteredNumberToCompare > fetchedNumber:
-        console.log('seu número é maior')
-        break
-      case userEnteredNumberToCompare < fetchedNumber:
-        console.log('seu número é menor')
-        break
-      default:
-        break
+    if (firstRender) {
+      setFirstRender(false)
+    } else {
+      console.log('verificando')
+      console.log(userEnteredNumberToCompare, fetchedNumber)
+      switch (true) {
+        case userEnteredNumberToCompare === fetchedNumber:
+          setMessage({ text: 'Você acertou!!!', color: 'message_success' })
+          break
+        case userEnteredNumberToCompare > fetchedNumber:
+          setMessage({ text: 'É maior', color: 'message_warning' })
+          break
+        case userEnteredNumberToCompare < fetchedNumber:
+          setMessage({ text: 'É menor', color: 'message_warning' })
+          break
+        default:
+          break
+      }
     }
   }, [userEnteredNumber])
 
@@ -67,7 +72,13 @@ const NumbersProvider = ({ children }) => {
 
   return (
     <NumbersContext.Provider
-      value={{ arrayNumbers, error, handleUserNumber, userEnteredNumber }}
+      value={{
+        arrayNumbers,
+        handleUserNumber,
+        userEnteredNumber,
+        message,
+        errorNumber
+      }}
     >
       {children}
     </NumbersContext.Provider>

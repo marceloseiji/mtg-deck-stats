@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './styles.css'
 import numbersResolver from 'utils/numbersResolver'
+import { NumbersContext } from 'contexts/NumbersContext'
 
 const DisplayLed = ({ showNumber = 0, error = false }) => {
+  const { message } = useContext(NumbersContext)
   const ledNumber = numbersResolver(showNumber)
-  const ledColor = error ? 'displayLed__on__error' : 'displayLed__on'
+  const ledColor =
+    message.color === 'message_error'
+      ? 'displayLed__on__error'
+      : 'displayLed__on'
   const ledOff = 'displayLed__off'
 
   return (
