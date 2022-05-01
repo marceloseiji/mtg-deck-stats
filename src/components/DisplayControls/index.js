@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './styles.css'
+import { NumbersContext } from 'contexts/NumbersContext'
 
 const DisplayControls = () => {
+  const number = useContext(NumbersContext)
+  console.log('context: ', number)
   return (
     <>
       <div>
