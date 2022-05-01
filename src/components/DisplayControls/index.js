@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import './styles.css'
 import { NumbersContext } from 'contexts/NumbersContext'
+import ReplayIcon from 'assets/icons/ReplayIcon'
 
 const DisplayControls = () => {
   const { handleUserNumber } = useContext(NumbersContext)
@@ -20,21 +21,29 @@ const DisplayControls = () => {
   }
 
   return (
-    <>
-      <div>
-        <button>NOVA PARTIDA</button>
+    <div className="displayControls">
+      <div className="displayControls__wrapper_button">
+        <button className="displayControls__button">
+          <ReplayIcon />
+          <span className="displayControls__button__text">NOVA PARTIDA</span>
+        </button>
       </div>
-      <div className="entryNumber">
+      <div className="displayControls__wrapper__entryNumber">
         <input
+          className="displayControls_number_input"
           type="number"
           value={numberEntered}
           onChange={(event) => handleEnteredNumber(event)}
         />
-        <button disabled={!numberEntered} onClick={handleSetContextNumber}>
+        <button
+          className="displayControls__sendButton"
+          disabled={!numberEntered}
+          onClick={handleSetContextNumber}
+        >
           ENVIAR
         </button>
       </div>
-    </>
+    </div>
   )
 }
 

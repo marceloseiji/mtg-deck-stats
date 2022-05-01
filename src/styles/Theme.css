@@ -1,7 +1,10 @@
 body {
   --primary: #ef6c00;
+  --primaryShadow: #b65200;
   --lightWhite: #eeeeee;
   --lightGrey: #cfcfcf;
+  --mediumGrey: #434854;
+  --mediumGreyB: #9a9ea7;
   --mediumBlack: #262a34;
   --error: #cc3300;
 }

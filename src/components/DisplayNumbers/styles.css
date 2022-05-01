@@ -5,6 +5,7 @@
   flex-direction: column;
   flex: 1;
   position: relative;
+  justify-content: center;
 }
 .displayNumbers__center {
   display: flex;
