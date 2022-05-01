@@ -62,3 +62,9 @@
 .disabled {
   background-image: linear-gradient(var(--lightGrey), var(--lightGrey));
 }
+
+@media (max-width: 768px) {
+  .displayControls_number_input {
+    width: 20rem;
+  }
+}

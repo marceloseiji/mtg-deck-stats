@@ -29,3 +29,12 @@
   height: 1px;
   background: var(--lightGrey);
 }
+
+@media (max-width: 768px) {
+  .display {
+    width: 365px;
+  }
+  .display__title__text {
+    font-size: 2.4rem;
+  }
+}

@@ -29,3 +29,9 @@
 .message_success {
   color: var(--success);
 }
+
+@media (max-width: 768px) {
+  .displayNumbers {
+    transform: scale(0.8);
+  }
+}
