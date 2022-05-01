@@ -1,6 +1,18 @@
+@import '../../styles/Theme.css';
+
 .displayNumbers {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.displayNumbers__center {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 8rem;
+}
+.error {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--error);
+  text-align: center;
 }

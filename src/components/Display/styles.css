@@ -5,14 +5,19 @@
   width: 1000px;
   height: 588px;
   background-color: var(--lightWhite);
+  display: flex;
+  flex-direction: column;
 }
 .display__title {
-  display: inline-block;
+  display: flex;
   width: 100%;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
 }
 .display__title__text {
   margin: 0;
-  padding-top: 3rem;
+  padding-top: 5rem;
   text-align: center;
   font-size: 3.6rem;
   color: var(--primary);

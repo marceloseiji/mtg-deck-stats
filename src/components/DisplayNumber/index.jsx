@@ -7,6 +7,7 @@ import splitNumbers from 'utils/splitNumbers'
 const DisplayNumbers = () => {
   const [fetchedNumber, setFetchedNumber] = useState(null)
   const [arrayNumbers, setArrayNumbers] = useState([])
+  const [error, setError] = useState(false)
 
   useEffect(async () => {
     const numberRequest = await getNumber()
@@ -16,6 +17,9 @@ const DisplayNumbers = () => {
       setFetchedNumber(value)
     } else {
       console.log('an error ocurred: ', numberRequest)
+      const { StatusCode } = numberRequest
+      setFetchedNumber(StatusCode)
+      setError(true)
     }
   }, [])
 
@@ -32,11 +36,16 @@ const DisplayNumbers = () => {
   }, [arrayNumbers])
 
   return (
-    <div className="displayNumbers">
-      {arrayNumbers.map((number, index) => (
-        <DisplayLed key={index} showNumber={number} />
-      ))}
-    </div>
+    <>
+      <div className="displayNumbers">
+        {error && <h2 className="error">ERRO</h2>}
+        <div className="displayNumbers__center">
+          {arrayNumbers.map((number, index) => (
+            <DisplayLed key={index} showNumber={number} />
+          ))}
+        </div>
+      </div>
+    </>
   )
 }
 
