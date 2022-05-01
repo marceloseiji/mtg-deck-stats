@@ -59,3 +59,6 @@
   border-radius: 4px;
   padding: 0 1.8rem;
 }
+.disabled {
+  background-image: linear-gradient(var(--lightGrey), var(--lightGrey));
+}

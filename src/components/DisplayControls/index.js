@@ -6,6 +6,7 @@ import ReplayIcon from 'assets/icons/ReplayIcon'
 const DisplayControls = () => {
   const { handleUserNumber, message } = useContext(NumbersContext)
   const [numberEntered, setNumberEntedered] = useState('')
+  const buttonColorDisabled = !numberEntered && 'disabled'
 
   const handleEnteredNumber = (event) => {
     if (event.target.value < 1000 && event.target.value > -1) {
@@ -38,7 +39,7 @@ const DisplayControls = () => {
           onChange={(event) => handleEnteredNumber(event)}
         />
         <button
-          className="displayControls__sendButton"
+          className={`displayControls__sendButton ${buttonColorDisabled}`}
           disabled={!numberEntered}
           onClick={handleSetContextNumber}
         >
