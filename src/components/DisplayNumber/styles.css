@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
 }
 .displayNumbers__center {
   display: flex;
@@ -12,7 +13,10 @@
 }
 .error {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--error);
   text-align: center;
+  position: absolute;
+  top: -55px;
+  width: 100%;
 }
