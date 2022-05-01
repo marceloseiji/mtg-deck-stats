@@ -1,10 +1,10 @@
 import React from 'react'
 import './styles/App.css'
-import Display from './components/Display'
+import Display from 'components/Display'
 
 const App = () => {
   return (
-    <div className="display">
+    <div className='display'>
       <Display />
     </div>
   )
