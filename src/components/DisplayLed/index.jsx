@@ -1,16 +1,9 @@
 import React from 'react'
 import './styles.css'
+import numbersResolver from 'utils/numbersResolver'
 
 const DisplayLed = ({ showNumber = 0 }) => {
-  const ledNumber = {
-    one: false,
-    two: true,
-    three: true,
-    four: false,
-    five: false,
-    six: false,
-    seven: false
-  }
+  const ledNumber = numbersResolver(showNumber)
 
   return (
     <div className="displayLed">
