@@ -49,3 +49,6 @@
 .displayLed__off {
   fill: var(--lightGrey);
 }
+.displayLed__on__error {
+  fill: var(--error);
+}

@@ -41,7 +41,7 @@ const DisplayNumbers = () => {
         {error && <h2 className="error">ERRO</h2>}
         <div className="displayNumbers__center">
           {arrayNumbers.map((number, index) => (
-            <DisplayLed key={index} showNumber={number} />
+            <DisplayLed key={index} showNumber={number} error={error} />
           ))}
         </div>
       </div>
