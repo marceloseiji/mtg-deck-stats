@@ -66,7 +66,6 @@ const NumbersProvider = ({ children }) => {
     if (firstRender) {
       setFirstRender(false)
     } else {
-      console.log(userEnteredNumberToCompare, fetchedNumber)
       switch (true) {
         case userEnteredNumberToCompare === fetchedNumber:
           setMessage({ text: 'Você acertou!!!', color: 'message_success' })
@@ -75,7 +74,8 @@ const NumbersProvider = ({ children }) => {
         case userEnteredNumberToCompare > fetchedNumber:
           setMessage({ text: 'É maior', color: 'message_warning' })
           break
-        case userEnteredNumberToCompare < fetchedNumber:
+        case userEnteredNumberToCompare < fetchedNumber &&
+          userEnteredNumberToCompare >= 0:
           setMessage({ text: 'É menor', color: 'message_warning' })
           break
         default:
@@ -92,9 +92,10 @@ const NumbersProvider = ({ children }) => {
 
   // Reset the game
   const handleResetGame = () => {
-    setUserEnteredNumberToCompare(0)
+    setUserEnteredNumberToCompare(-1)
     setNumberMap([1000])
     setErrorNumber('')
+    setUserEnteredNumber([1000])
     fetchNumber()
     setResetVisibility(false)
     setMessage({ text: '', color: '' })

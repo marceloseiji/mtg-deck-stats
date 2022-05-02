@@ -4,7 +4,7 @@ import DisplayLed from 'components/DisplayLed'
 import { NumbersContext } from 'contexts/NumbersContext'
 
 const DisplayNumbers = () => {
-  const { message, userEnteredNumber, errorNumber, numberMap, setNumberMap } =
+  const { message, numberMap } =
     useContext(NumbersContext)
 
   return (
