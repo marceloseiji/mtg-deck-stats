@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "start": "npx webpack-dev-server --mode development --open --hot",
-    "build": "npx webpack --mode production",
-    "dev": "webpack serve"
+    "dev": "npx webpack-dev-server --mode development --open --hot",
+    "start": "node server.js",
+    "build": "npx webpack --mode production"
   },
   "repository": {
     "type": "git",
