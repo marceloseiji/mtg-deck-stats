@@ -64,6 +64,7 @@
 .disabled {
   background-image: linear-gradient(var(--lightGrey), var(--lightGrey));
   cursor: default;
+  border: none;
 }
 
 @media (max-width: 768px) {
