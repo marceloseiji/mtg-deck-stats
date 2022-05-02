@@ -6,11 +6,13 @@ import { NumbersContext } from 'contexts/NumbersContext'
 const DisplayLed = ({ showNumber = 0 }) => {
   const { message } = useContext(NumbersContext)
   const ledNumber = numbersResolver(showNumber)
+  const ledOff = 'displayLed__off'
   const ledColor =
     message.color === 'message_error'
       ? 'displayLed__on__error'
+      : message.color === 'message_success'
+      ? 'displayLed__on__success'
       : 'displayLed__on'
-  const ledOff = 'displayLed__off'
 
   return (
     <div className="displayLed">
