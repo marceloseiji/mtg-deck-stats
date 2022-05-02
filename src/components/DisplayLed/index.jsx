@@ -3,7 +3,7 @@ import './styles.css'
 import numbersResolver from 'utils/numbersResolver'
 import { NumbersContext } from 'contexts/NumbersContext'
 
-const DisplayLed = ({ showNumber = 0, error = false }) => {
+const DisplayLed = ({ showNumber = 0 }) => {
   const { message } = useContext(NumbersContext)
   const ledNumber = numbersResolver(showNumber)
   const ledColor =

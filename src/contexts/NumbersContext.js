@@ -20,6 +20,8 @@ const NumbersProvider = ({ children }) => {
   const [message, setMessage] = useState({ text: '', color: '' })
   // ResetGame button visbility state
   const [resetVisibility, setResetVisibility] = useState(false)
+  // Number to map on DisplayNumbers
+  const [numberMap, setNumberMap] = useState([])
 
   // Function to Fetch initial number
   const fetchNumber = async () => {
@@ -36,6 +38,11 @@ const NumbersProvider = ({ children }) => {
       return
     }
   }
+
+  // Array of numbers that will be displayed on DisplayNumbers component
+  useEffect(() => {
+    setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
+  }, [userEnteredNumber, errorNumber])
 
   // Get the initial number from services on render component
   useEffect(async () => {
@@ -54,6 +61,7 @@ const NumbersProvider = ({ children }) => {
     if (firstRender) {
       setFirstRender(false)
     } else {
+      console.log(userEnteredNumberToCompare, fetchedNumber)
       switch (true) {
         case userEnteredNumberToCompare === fetchedNumber:
           setMessage({ text: 'Você acertou!!!', color: 'message_success' })
@@ -79,12 +87,11 @@ const NumbersProvider = ({ children }) => {
 
   // Reset the game
   const handleResetGame = () => {
-    setUserEnteredNumber(splitNumbers(0))
     setUserEnteredNumberToCompare(0)
-    setMessage({ text: '', color: '' })
-    setErrorNumber('')
+    setNumberMap([1000])
     fetchNumber()
     setResetVisibility(false)
+    setMessage({ text: '', color: '' })
   }
 
   return (
@@ -97,7 +104,8 @@ const NumbersProvider = ({ children }) => {
         errorNumber,
         handleResetGame,
         resetVisibility,
-        resetVisibility
+        numberMap,
+        setNumberMap
       }}
     >
       {children}

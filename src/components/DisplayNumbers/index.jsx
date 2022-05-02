@@ -4,12 +4,8 @@ import DisplayLed from 'components/DisplayLed'
 import { NumbersContext } from 'contexts/NumbersContext'
 
 const DisplayNumbers = () => {
-  const { message, userEnteredNumber, errorNumber } = useContext(NumbersContext)
-  const [numberMap, setNumberMap] = useState([])
-
-  useEffect(() => {
-    setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
-  }, [userEnteredNumber, errorNumber])
+  const { message, userEnteredNumber, errorNumber, numberMap, setNumberMap } =
+    useContext(NumbersContext)
 
   return (
     <>
