@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watch",
     "start": "npx webpack-dev-server --mode development --open --hot",
-    "build": "npx webpack --mode production"
+    "build": "npx webpack --mode production",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "express": "^4.18.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
