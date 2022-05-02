@@ -18,9 +18,11 @@ const NumbersProvider = ({ children }) => {
   const [errorNumber, setErrorNumber] = useState()
   // Message text and color states
   const [message, setMessage] = useState({ text: '', color: '' })
+  // ResetGame button visbility state
+  const [resetVisibility, setResetVisibility] = useState(false)
 
-  // Get the initial number from services
-  useEffect(async () => {
+  // Function to Fetch initial number
+  const fetchNumber = async () => {
     const numberRequest = await getNumber()
     if (numberRequest.value) {
       const { value } = numberRequest
@@ -30,8 +32,14 @@ const NumbersProvider = ({ children }) => {
       // Set status error number like it was entered by user
       setErrorNumber(splitNumbers(StatusCode))
       setMessage({ text: 'Erro', color: 'message_error' })
+      setResetVisibility(true)
       return
     }
+  }
+
+  // Get the initial number from services on render component
+  useEffect(async () => {
+    fetchNumber()
   }, [])
 
   // Resolve number from services to a array
@@ -46,11 +54,10 @@ const NumbersProvider = ({ children }) => {
     if (firstRender) {
       setFirstRender(false)
     } else {
-      console.log('verificando')
-      console.log(userEnteredNumberToCompare, fetchedNumber)
       switch (true) {
         case userEnteredNumberToCompare === fetchedNumber:
           setMessage({ text: 'Você acertou!!!', color: 'message_success' })
+          setResetVisibility(true)
           break
         case userEnteredNumberToCompare > fetchedNumber:
           setMessage({ text: 'É maior', color: 'message_warning' })
@@ -70,6 +77,16 @@ const NumbersProvider = ({ children }) => {
     setUserEnteredNumber(splitNumbers(userNumber))
   }
 
+  // Reset the game
+  const handleResetGame = () => {
+    setUserEnteredNumber(splitNumbers(0))
+    setUserEnteredNumberToCompare(0)
+    setMessage({ text: '', color: '' })
+    setErrorNumber('')
+    fetchNumber()
+    setResetVisibility(false)
+  }
+
   return (
     <NumbersContext.Provider
       value={{
@@ -77,7 +94,10 @@ const NumbersProvider = ({ children }) => {
         handleUserNumber,
         userEnteredNumber,
         message,
-        errorNumber
+        errorNumber,
+        handleResetGame,
+        resetVisibility,
+        resetVisibility
       }}
     >
       {children}
