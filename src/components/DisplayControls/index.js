@@ -4,11 +4,8 @@ import { NumbersContext } from 'contexts/NumbersContext'
 import ReplayIcon from 'assets/icons/ReplayIcon'
 
 const DisplayControls = () => {
-  const {
-    handleUserNumber,
-    handleResetGame,
-    resetVisibility
-  } = useContext(NumbersContext)
+  const { handleUserNumber, handleResetGame, resetVisibility } =
+    useContext(NumbersContext)
   const [numberEntered, setNumberEntedered] = useState('')
   const buttonColorDisabled = !numberEntered && 'disabled'
 
@@ -29,14 +26,9 @@ const DisplayControls = () => {
     <div className="displayControls">
       <div className="displayControls__wrapper_button">
         {resetVisibility && (
-          <button className="displayControls__button">
+          <button className="displayControls__button" onClick={handleResetGame}>
             <ReplayIcon />
-            <span
-              className="displayControls__button__text"
-              onClick={handleResetGame}
-            >
-              NOVA PARTIDA
-            </span>
+            <span className="displayControls__button__text">NOVA PARTIDA</span>
           </button>
         )}
       </div>

@@ -39,10 +39,15 @@ const NumbersProvider = ({ children }) => {
     }
   }
 
-  // Array of numbers that will be displayed on DisplayNumbers component
+  // Set the Array of numbers that will be displayed on DisplayNumbers component
   useEffect(() => {
     setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
-  }, [userEnteredNumber, errorNumber])
+  }, [userEnteredNumber])
+
+  // Set the Array of numbers to be displayed on DisplayNumbers component
+  useEffect(() => {
+    setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
+  }, [errorNumber])
 
   // Get the initial number from services on render component
   useEffect(async () => {
@@ -89,6 +94,7 @@ const NumbersProvider = ({ children }) => {
   const handleResetGame = () => {
     setUserEnteredNumberToCompare(0)
     setNumberMap([1000])
+    setErrorNumber('')
     fetchNumber()
     setResetVisibility(false)
     setMessage({ text: '', color: '' })
