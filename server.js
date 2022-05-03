@@ -12,5 +12,5 @@ const server = app.listen(app.get('port'), function () {
 
 const path = require('path')
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
