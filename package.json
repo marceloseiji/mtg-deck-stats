@@ -1,7 +1,7 @@
 {
   "name": "studiosol-numbers",
   "version": "1.0.0",
-  "description": "A React.js boilerplate",
+  "description": "Project to studiosol",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
