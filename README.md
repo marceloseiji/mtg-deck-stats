@@ -10,7 +10,7 @@ This is a test made to studio-sol
   - this will start out development server on [port:3000](http://localhost:3000/) - this can be changed on webpack.config.js
 
 - yarn build
-  - this will build out dist folder on public/dist - this path can be changed in webpack.config.js - output
+  - this will build out public folder - this path can be changed in webpack.config.js - output
 
 ### This project is tested with
   - [jest](https://jestjs.io/pt-BR/)

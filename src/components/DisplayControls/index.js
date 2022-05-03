@@ -11,7 +11,10 @@ const DisplayControls = () => {
   const inputDisabled = message.text === 'Erro' ? 'disabled' : null
 
   const handleEnteredNumber = (event) => {
-    if (event.target.value < 1000 && event.target.value > -1) {
+    if (
+      event.target.value > -1 &&
+      event.target.value.length < 4
+    ) {
       setNumberEntedered(event.target.value)
     }
   }
