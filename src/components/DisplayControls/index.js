@@ -8,13 +8,9 @@ const DisplayControls = () => {
     useContext(NumbersContext)
   const [numberEntered, setNumberEntedered] = useState('')
   const buttonColorDisabled = !numberEntered && 'disabled'
-  const inputDisabled = message.text === 'Erro' ? 'disabled' : null
 
   const handleEnteredNumber = (event) => {
-    if (
-      event.target.value > -1 &&
-      event.target.value.length < 4
-    ) {
+    if (event.target.value > -1 && event.target.value.length < 4) {
       setNumberEntedered(event.target.value)
     }
   }
@@ -38,11 +34,11 @@ const DisplayControls = () => {
       </div>
       <div className="displayControls__wrapper__entryNumber">
         <input
-          className={`displayControls_number_input ${inputDisabled}`}
+          className="displayControls_number_input"
           type="number"
           value={numberEntered}
           onChange={(event) => handleEnteredNumber(event)}
-          disabled={inputDisabled}
+          placeholder="Digite o palpite"
         />
         <button
           className={`displayControls__sendButton ${buttonColorDisabled}`}

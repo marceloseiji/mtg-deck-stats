@@ -71,10 +71,10 @@ const NumbersProvider = ({ children }) => {
           setMessage({ text: 'Você acertou!!!', color: 'message_success' })
           setResetVisibility(true)
           break
-        case userEnteredNumberToCompare > fetchedNumber:
+        case userEnteredNumberToCompare < fetchedNumber:
           setMessage({ text: 'É maior', color: 'message_warning' })
           break
-        case userEnteredNumberToCompare < fetchedNumber &&
+        case userEnteredNumberToCompare > fetchedNumber &&
           userEnteredNumberToCompare >= 0:
           setMessage({ text: 'É menor', color: 'message_warning' })
           break
