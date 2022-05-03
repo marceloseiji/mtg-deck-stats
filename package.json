@@ -4,7 +4,8 @@
   "description": "Project to studiosol",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watchAll",
     "dev": "npx webpack-dev-server --mode development --open --hot",
     "start": "node server.js",
     "build": "npx webpack --mode production"
