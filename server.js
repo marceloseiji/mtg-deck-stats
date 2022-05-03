@@ -11,5 +11,5 @@ const server = app.listen(app.get('port'), function () {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  res.sendFile(path.join(__dirname, 'dist', 'bundle.js'))
 })
