@@ -3,14 +3,19 @@ This is a test made to studio-sol
 [Project rules](https://drive.google.com/file/d/1HRqt2HfKKZbBFGkkYwD8m3T4tbHrv8ZJ/view)
 
 ### Important notes
-    - yarn, this project was made to use yarn as prefered package manager
+  - yarn, this project was made to use yarn as prefered package manager
 ### Commands to use until now
+  - yart test
+    - run jest tests with watch mode
 
-- yarn start
-  - this will start out development server on [port:3000](http://localhost:3000/) - this can be changed on webpack.config.js
+  - yarn dev
+    - this will start out development server on [port:3000](http://localhost:3000/) - this can be changed on webpack.config.js
 
-- yarn build
-  - this will build out public folder - this path can be changed in webpack.config.js - output
+  - yarn build
+    - this will build out public folder - this path can be changed in webpack.config.js - output
+  
+  - yard start
+    - is used to heroku on production enviroment
 
 ### This project is tested with
   - [jest](https://jestjs.io/pt-BR/)
