@@ -3,7 +3,7 @@ const express = require('express')
 
 const app = express()
 
-app.use(express.static(path.join(__dirname, 'public', 'dist')))
+app.use(express.static(path.join(__dirname, 'dist')))
 app.set('port', process.env.PORT || 3000)
 
 const server = app.listen(app.get('port'), function () {
@@ -12,5 +12,5 @@ const server = app.listen(app.get('port'), function () {
 
 const path = require('path')
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
 })
