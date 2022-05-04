@@ -17,6 +17,7 @@ const DisplayLed = ({ showNumber = 0 }) => {
   return (
     <div className="displayLed">
       <svg
+        data-testid="led1"
         width="69"
         height="15"
         viewBox="0 0 69 15"
@@ -65,6 +66,7 @@ const DisplayLed = ({ showNumber = 0 }) => {
         <path d="M1.71614 0.815502C0.644493 2.1311 0 3.80888 0 5.63687V57.4298C0 60.3986 1.69695 62.9659 4.17155 64.2293L15.8425 55.4825V13.947L1.71614 0.815502Z" />
       </svg>
       <svg
+        data-testid="led7"
         width="63"
         height="17"
         viewBox="0 0 63 17"
