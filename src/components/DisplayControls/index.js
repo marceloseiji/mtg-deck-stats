@@ -9,12 +9,14 @@ const DisplayControls = () => {
   const [numberEntered, setNumberEntedered] = useState('')
   const buttonColorDisabled = !numberEntered && 'disabled'
 
+  // Validate and add typed numbers to input
   const handleEnteredNumber = (event) => {
     if (event.target.value > -1 && event.target.value.length < 4) {
       setNumberEntedered(event.target.value)
     }
   }
 
+  // Send the input typed number to NUmberContext
   const handleSetContextNumber = () => {
     if (numberEntered) {
       handleUserNumber(numberEntered)

@@ -40,11 +40,12 @@ const NumbersProvider = ({ children }) => {
   }
 
   // Set the Array of numbers that will be displayed on DisplayNumbers component
+  // If there's a request error errorNumber take priority
   useEffect(() => {
     setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
   }, [userEnteredNumber])
 
-  // Set the Array of numbers to be displayed on DisplayNumbers component
+  // Set the number error to be displayed on screen
   useEffect(() => {
     setNumberMap(errorNumber ? errorNumber : userEnteredNumber)
   }, [errorNumber])

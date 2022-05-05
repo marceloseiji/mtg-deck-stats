@@ -1,3 +1,7 @@
+/* 
+  This function receives a number that is converted to an object, this object resolve
+  what led should be turned on or off
+*/
 const numbersResolver = (displayNumber) => {
   switch (displayNumber) {
     case 0:

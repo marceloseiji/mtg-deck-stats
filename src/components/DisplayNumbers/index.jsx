@@ -3,6 +3,11 @@ import './styles.css'
 import DisplayLed from 'components/DisplayLed'
 import { NumbersContext } from 'contexts/NumbersContext'
 
+/*
+  This component uses numberMap these are the numbers typed by user transformed in
+  a array converted by numbersResolver
+*/
+
 const DisplayNumbers = () => {
   const { message, numberMap } = useContext(NumbersContext)
   return (

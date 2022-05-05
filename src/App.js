@@ -6,9 +6,7 @@ import { NumbersProvider } from './contexts/NumbersContext'
 const App = () => {
   return (
     <NumbersProvider>
-      <div className="display">
-        <Display />
-      </div>
+      <Display />
     </NumbersProvider>
   )
 }

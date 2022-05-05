@@ -1,20 +1,26 @@
-# studiosol-numbers
+# STUDIOSOL-NUMBERS
 This is a test made to studio-sol
 [Project rules](https://drive.google.com/file/d/1HRqt2HfKKZbBFGkkYwD8m3T4tbHrv8ZJ/view)
 
-### Important notes
-  - yarn, this project was made to use yarn as prefered package manager
-### Commands to use until now
-  - yart test
-    - run jest tests with watch mode
+### Project deployed on
+  [studiosol-numbers](http://studiosol-numbers.herokuapp.com/)
 
+### Important notes
+  - :::YARN:::, this project was made to be used with yarn as prefered package manager
+### Commands to use until now
   - yarn dev
-    - this will start out development server on [port:3000](http://localhost:3000/) - this can be changed on webpack.config.js
+    - START out the project
+    - this will start out development server on [port:3000](http://localhost:3000/) - this can be changed   on webpack.config.js
+  - yart test
+    - run jest tests and show coverage
+
+  - yart test:watch
+    - run jest tests in watch mode and show coverage
 
   - yarn build
     - this will build out public folder - this path can be changed in webpack.config.js - output
   
-  - yard start
+  - yarn start
     - is used to heroku on production enviroment
 
 ### This project is tested with

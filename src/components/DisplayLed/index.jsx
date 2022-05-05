@@ -7,6 +7,9 @@ const DisplayLed = ({ showNumber = 0 }) => {
   const { message } = useContext(NumbersContext)
   const ledNumber = numbersResolver(showNumber)
   const ledOff = 'displayLed__off'
+
+  // This const defines the color of displayed number based on a message received
+  // by NumbersContext
   const ledColor =
     message.color === 'message_error'
       ? 'displayLed__on__error'
