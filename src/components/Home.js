@@ -8,7 +8,7 @@ const Home = () => {
   }
 
   const getCardsByName = async () => {
-    const cards = await Cards.withName('Incinerate')
+    const cards = await Cards.withName('meddling mage')
     console.log(cards)
   }
 

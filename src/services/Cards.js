@@ -1,6 +1,6 @@
 class Cards {
   constructor() {
-    this.url = 'https://api.magicthegathering.io/v1/cards'
+    this.url = 'https://api.scryfall.com/cards/search'
   }
 
   withPagination = async (page) => {
@@ -9,7 +9,7 @@ class Cards {
   }
 
   withName = async (name) => {
-    const response = await fetch(`${this.url}?name=${name}`)
+    const response = await fetch(`${this.url}?q=${name}`)
     return await response.json()
   }
 }
