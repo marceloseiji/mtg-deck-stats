@@ -1,13 +1,13 @@
 import React from 'react'
 import './styles/App.css'
 import Display from 'components/Display'
-import { NumbersProvider } from './contexts/NumbersContext'
+import { GlobalProvider } from './contexts/GlobalContext'
 
 const App = () => {
   return (
-    <NumbersProvider>
+    <GlobalProvider>
       <Display />
-    </NumbersProvider>
+    </GlobalProvider>
   )
 }
 
