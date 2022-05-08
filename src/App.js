@@ -1,12 +1,12 @@
 import React from 'react'
 import './styles/App.css'
-import Display from 'components/Display'
+import Home from 'components/Home'
 import { GlobalProvider } from './contexts/GlobalContext'
 
 const App = () => {
   return (
     <GlobalProvider>
-      <Display />
+      <Home />
     </GlobalProvider>
   )
 }
