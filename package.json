@@ -1,7 +1,7 @@
 {
-  "name": "studiosol-numbers",
+  "name": "mtg-deck-stats",
   "version": "1.0.0",
-  "description": "Project to studiosol",
+  "description": "An mtg deckbuilder with stats",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",

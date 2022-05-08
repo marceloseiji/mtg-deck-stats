@@ -1,10 +1,3 @@
-# STUDIOSOL-NUMBERS
-This is a test made to studio-sol
-[Project rules](https://drive.google.com/file/d/1HRqt2HfKKZbBFGkkYwD8m3T4tbHrv8ZJ/view)
-
-### Project deployed on
-  [studiosol-numbers](http://studiosol-numbers.herokuapp.com/)
-
 ### Important notes
   - :::YARN:::, this project was made to be used with yarn as prefered package manager
 ### Commands to use until now
