@@ -1,7 +1,8 @@
 import React from 'react'
-import './styles/App.css'
 import Home from 'components/Home'
 import { GlobalProvider } from './contexts/GlobalContext'
+import 'normalize.css'
+import './styles/GlobalStyle.css'
 
 const App = () => {
   return (
