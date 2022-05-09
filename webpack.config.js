@@ -38,6 +38,7 @@ module.exports = {
   // Set the default por of webpack-dev-server
   // from 8080 to 3000
   devServer: {
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   }
 }

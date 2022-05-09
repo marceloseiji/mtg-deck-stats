@@ -1,13 +1,11 @@
 import React from 'react'
-import Home from 'components/Home'
+import AppRouter from 'routers/AppRouter'
 import { GlobalProvider } from './contexts/GlobalContext'
-import 'normalize.css'
-import './styles/GlobalStyle.css'
 
 const App = () => {
   return (
     <GlobalProvider>
-      <Home />
+      <AppRouter />
     </GlobalProvider>
   )
 }
