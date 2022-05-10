@@ -19,3 +19,9 @@
 ### This project is tested with
   - [jest](https://jestjs.io/pt-BR/)
   - [testing-library](https://testing-library.com/docs/react-testing-library/intro/)
+
+### Project structure
+  |--Home
+    |--Show decks
+  |--Decks
+    |--New deck
