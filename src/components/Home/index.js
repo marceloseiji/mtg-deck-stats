@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Cards from 'services/Cards'
+import { Button } from 'antd'
 
 const Home = () => {
   const [fetchedCardInfos, setFetchedCardInfos] = useState('')
@@ -33,6 +34,7 @@ const Home = () => {
   return (
     <>
       <h1>Cards</h1>
+      <Button type="primary">Button</Button>
       <input
         autoComplete="off"
         type="text"
