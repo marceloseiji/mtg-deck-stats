@@ -42,7 +42,7 @@ const Home = () => {
       />
       {fetchedCardInfos &&
         fetchedCardInfos.map((card, index) => (
-          <span action onClick={testButton(card.name)} key={index}>
+          <span onClick={testButton(card.name)} key={index}>
             {card.name}
           </span>
         ))}

@@ -1,6 +1,7 @@
 import React from 'react'
-import AppRouter from 'routers/AppRouter'
+import Home from 'components/Home'
 import { GlobalProvider } from './contexts/GlobalContext'
+import AppRouter from 'routers/AppRouter'
 
 const App = () => {
   return (
