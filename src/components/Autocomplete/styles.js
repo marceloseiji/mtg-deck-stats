@@ -33,7 +33,6 @@ function Asynchronous({
 
   return (
     <Autocomplete
-      size="small"
       id="autocompleteAsync"
       sx={{ width: 300 }}
       open={open}

@@ -9,4 +9,8 @@ body {
   width: 100%;
   display: inline-block;
 }
-
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
