@@ -21,7 +21,6 @@ const SideBar = ({ content }) => {
   }
 
   const handleChangeRoute = (route = '') => {
-    console.log('changing route')
     navigate(route)
   }
 
@@ -44,7 +43,7 @@ const SideBar = ({ content }) => {
               key: '2',
               icon: <VideoCameraOutlined />,
               label: 'My decks',
-              onClick: () => handleChangeRoute('decks')
+              onClick: () => handleChangeRoute('/decks')
             },
             {
               key: '3',
