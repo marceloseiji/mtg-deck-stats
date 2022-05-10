@@ -1,51 +1,47 @@
 import React, { useEffect, useState } from 'react'
 import Cards from 'services/Cards'
+import Autocomplete from 'components/Autocomplete'
 
 const Home = () => {
   const [fetchedCardInfos, setFetchedCardInfos] = useState('')
-  const [inputTyped, setInputTyped] = useState('')
+  const [inputTypedValue, setInputTypedValue] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const getCardsByName = async () => {
-    const { data } = await Cards.withName(inputTyped)
-    setFetchedCardInfos(data)
-  }
-
-  const handleInputValue = (value) => {
-    setInputTyped(value)
-  }
-
-  const testButton = (name) => {
-    console.log(name)
+    const { data } = await Cards.withName(inputTypedValue)
+    setFetchedCardInfos(data.map((card) => ({ title: card.name })))
   }
 
   useEffect(() => {
-    if (inputTyped.length > 2) {
+    if (fetchedCardInfos.length > 0) {
+      setLoading(false)
+    }
+  }, [fetchedCardInfos])
+
+  useEffect(() => {
+    if (inputTypedValue?.length > 2) {
       let executeAfterTimeOut = setTimeout(() => {
-        getCardsByName(inputTyped)
+        getCardsByName(inputTypedValue)
       }, [1000])
+      setLoading(true)
 
       return () => {
         clearTimeout(executeAfterTimeOut)
       }
     }
-  }, [inputTyped])
+  }, [inputTypedValue])
 
   return (
     <>
-      <h1>Cards</h1>
-      <input
-        autoComplete="off"
-        type="text"
-        placeholder="Enter card name..."
-        value={inputTyped}
-        onChange={(event) => handleInputValue(event.target.value)}
+      <h1>Your decks</h1>
+      <Autocomplete
+        label={'Ender card name...'}
+        data={fetchedCardInfos}
+        setData={setFetchedCardInfos}
+        setInputTypedValue={setInputTypedValue}
+        loading={loading}
+        noOptionsText="Enter card name..."
       />
-      {fetchedCardInfos &&
-        fetchedCardInfos.map((card, index) => (
-          <span action onClick={testButton(card.name)} key={index}>
-            {card.name}
-          </span>
-        ))}
     </>
   )
 }
