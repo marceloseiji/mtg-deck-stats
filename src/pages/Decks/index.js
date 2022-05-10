@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Cards from 'services/Cards'
 import { Button } from 'antd'
 
-const Home = () => {
+const Decks = () => {
   const [fetchedCardInfos, setFetchedCardInfos] = useState('')
   const [inputTyped, setInputTyped] = useState('')
 
@@ -52,4 +52,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Decks

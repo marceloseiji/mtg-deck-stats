@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import Home from 'components/Home'
-import Decks from 'components/Decks'
+import Home from 'pages/Home'
+import Decks from 'pages/Decks'
 import 'normalize.css'
 import 'styles/GlobalStyle.css'
 
