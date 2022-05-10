@@ -9,8 +9,11 @@ import Drawer from 'components/Drawer'
 const AppRouter = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Drawer component={<Home />} />} />
-      <Route path="decks" element={<Decks />} />
+      <Route path="/" element={<Drawer component={<Home />} title="Home" />} />
+      <Route
+        path="newdeck"
+        element={<Drawer component={<Decks />} title="New deck" />}
+      />
     </Routes>
   </BrowserRouter>
 )
