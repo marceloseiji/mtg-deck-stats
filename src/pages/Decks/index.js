@@ -15,10 +15,6 @@ const Decks = () => {
     setInputTyped(value)
   }
 
-  const testButton = (name) => {
-    console.log(name)
-  }
-
   useEffect(() => {
     if (inputTyped.length > 2) {
       let executeAfterTimeOut = setTimeout(() => {

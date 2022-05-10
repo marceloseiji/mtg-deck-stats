@@ -1,1 +1,1 @@
-{"version":3,"sources":["GlobalStyle.less"],"names":[],"mappings":"QAAQ;;AAGR;EACE,YAAA;;EAEA,aAAa,YAAb;;AAEF;EACE,YAAA;EACA,WAAA;EACA,qBAAA","file":"GlobalStyle.css"}
+{"version":3,"sources":["GlobalStyle.less"],"names":[],"mappings":"QAAQ;QACA;;AAIR;EACE,aAAA;EACA,eAAA;EACA,aAAa,YAAb;;AAGF;EACE,YAAA;EACA,WAAA;;AAGF;EACE,YAAA;EACA,WAAA","file":"GlobalStyle.css"}
