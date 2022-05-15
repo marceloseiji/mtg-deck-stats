@@ -1,0 +1,20 @@
+.collectionList {
+  margin-top: 3rem;
+}
+.ant-list .ant-avatar-circle {
+  border-radius: 2px !important;
+  height: 46px !important;
+}
+.ant-list .ant-btn {
+  border: none;
+  padding: 0;
+  height: auto;
+}
+.ant-list .ant-btn span {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.ant-popover-inner-content img {
+  height: 410px;
+}
+/*# sourceMappingURL=styles.css.map */

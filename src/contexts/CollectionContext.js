@@ -4,9 +4,15 @@ const CollectionContext = createContext([])
 
 const CollectionProvider = ({ children }) => {
   const [myCollection, setMyCollection] = useState([])
+
+  useEffect(() => {
+    console.log(myCollection)
+  }, [myCollection])
+
   return (
     <CollectionContext.Provider
       value={{
+        myCollection,
         setMyCollection
       }}
     >

@@ -52,7 +52,7 @@ const SideBar = ({ content }) => {
               onClick: () => handleChangeRoute('/decks')
             },
             {
-              key: '3',
+              key: '4',
               icon: <UploadOutlined />,
               label: 'nav 3'
             }
