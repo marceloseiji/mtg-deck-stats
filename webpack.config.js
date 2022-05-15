@@ -15,7 +15,27 @@ module.exports = {
       },
       {
         test: /\.css$/, //checks for .css files
-        use: ['style-loader', 'css-loader']
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader' // translates CSS into CommonJS
+          },
+          {
+            loader: 'less-loader', // compiles Less to CSS
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  'primary-color': '#eee',
+                  'link-color': '#1DA57A',
+                  'border-radius-base': '2px'
+                },
+                javascriptEnabled: true
+              }
+            }
+          }
+        ]
       }
     ]
   },

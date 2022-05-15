@@ -1,18 +1,37 @@
 import React, { useEffect, useState } from 'react'
 import Cards from 'services/Cards'
-import { Button } from 'antd'
+import { AutoComplete, Space } from 'antd'
 
 const Decks = () => {
-  const [fetchedCardInfos, setFetchedCardInfos] = useState('')
+  const [autoCompleteOptions, setAutocompleteOptions] = useState([])
+  const [cardFetched, setCardsFetched] = useState([])
   const [inputTyped, setInputTyped] = useState('')
+  const [cardsCollection, setCardsCollection] = useState([])
 
   const getCardsByName = async () => {
     const { data } = await Cards.withName(inputTyped)
-    setFetchedCardInfos(data)
+    setCardsFetched(data)
+    arrayCardsNames(data)
+  }
+
+  const arrayCardsNames = (data) => {
+    const dataCardsNames = data.map((card) => ({
+      value: card.name,
+      id: card.id
+    }))
+    setAutocompleteOptions(dataCardsNames)
   }
 
   const handleInputValue = (value) => {
     setInputTyped(value)
+  }
+
+  const handleAddCardToCollection = (option) => {
+    const card = cardFetched.find((card) => card.id === option.id)
+    setCardsCollection((previousCardsCollection) => [
+      ...previousCardsCollection,
+      card
+    ])
   }
 
   useEffect(() => {
@@ -30,20 +49,15 @@ const Decks = () => {
   return (
     <>
       <h1>Cards</h1>
-      <Button type="primary">Button</Button>
-      <input
-        autoComplete="off"
-        type="text"
-        placeholder="Enter card name..."
-        value={inputTyped}
-        onChange={(event) => handleInputValue(event.target.value)}
+      <AutoComplete
+        options={autoCompleteOptions}
+        onSearch={(text) => handleInputValue(text)}
+        status="error"
+        style={{ width: 200 }}
+        onSelect={(value, option) => handleAddCardToCollection(option)}
+        placeholder="Card name..."
+        notFoundContent="No card found..."
       />
-      {fetchedCardInfos &&
-        fetchedCardInfos.map((card, index) => (
-          <span onClick={testButton(card.name)} key={index}>
-            {card.name}
-          </span>
-        ))}
     </>
   )
 }
