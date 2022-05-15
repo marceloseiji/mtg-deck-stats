@@ -42,6 +42,12 @@ const SideBar = ({ content }) => {
             {
               key: '2',
               icon: <VideoCameraOutlined />,
+              label: 'My collection',
+              onClick: () => handleChangeRoute('/collection')
+            },
+            {
+              key: '3',
+              icon: <VideoCameraOutlined />,
               label: 'My decks',
               onClick: () => handleChangeRoute('/decks')
             },
